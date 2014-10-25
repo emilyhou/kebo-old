@@ -1,10 +1,7 @@
 angular.module('demo.controllers', [])
 
-<<<<<<< HEAD
+
 .controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue) {
-=======
-.controller('MainCtrl', function($scope, $ionicPopup, Queue) {
->>>>>>> e471bb8b383a8014e124709781089ff5245171c2
     $scope.dishes = Queue.all();
     $scope.dish = $scope.dishes[0];
     
@@ -34,7 +31,6 @@ angular.module('demo.controllers', [])
         var index = $scope.dishes.indexOf(this.dish);
         //alert(this.dishes[index].dish);
 
-<<<<<<< HEAD
             // An elaborate, custom popup
             var myPopup = $ionicPopup.show({
             template: 'Price: $' + this.dishes[index].price + '<br>Rating: ' + this.dishes[index].rating + "/5",
@@ -63,18 +59,7 @@ angular.module('demo.controllers', [])
     $scope.viewDetails = function() {
         alert("Hello");
         $state.go('restaurant');
-=======
-   // An elaborate, custom popup
-        var myPopup = $ionicPopup.show({
-        template: 'Price: $' + this.dishes[index].price + '<br>Rating: ' + this.dishes[index].rating + "/5",
-        title: this.dishes[index].dish,
-        scope: $scope,
-        buttons: [
-        { text: 'OK' }
-     ]
-   });
->>>>>>> e471bb8b383a8014e124709781089ff5245171c2
-    }
+    };
 })
 
 .controller('RestaurantCtrl', function($scope) {
