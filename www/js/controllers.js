@@ -1,6 +1,6 @@
 angular.module('demo.controllers', [])
 
-.controller('MainCtrl', function($scope, Queue) {
+.controller('MainCtrl', function($scope, $ionicPopup, Queue) {
     $scope.dishes = Queue.all();
     $scope.dish = $scope.dishes[0];
     
@@ -24,6 +24,21 @@ angular.module('demo.controllers', [])
             nextItem = this.dishes[this.dishes.length-1];
         }
         this.dish = nextItem;
+    }
+    
+    $scope.onTap = function() {
+        var index = $scope.dishes.indexOf(this.dish);
+        //alert(this.dishes[index].dish);
+
+   // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+        template: 'Price: $' + this.dishes[index].price + '<br>Rating: ' + this.dishes[index].rating + "/5",
+        title: this.dishes[index].dish,
+        scope: $scope,
+        buttons: [
+        { text: 'OK' }
+     ]
+   });
     }
 })
 

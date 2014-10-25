@@ -8,9 +8,9 @@ angular.module('demo.services', [])
 
   // Some fake testing data
 var dishes = [
-    {"dish": "Very Delicious Cookies", "imagePath": "img/cookies.jpg", "restaurant": "Res A", "price": 2.99, "rating": 4.0},
-    {"dish": "House Special Spaghetti", "imagePath": "img/spaghetti.jpg", "restaurant": "Res A", "price": 9.99, "rating": 4.0},
-    {"dish": "Smeely Smokey ribs", "imagePath": "img/ribs.jpg", "restaurant": "Res B", "price": 12.99, "rating": 4.3}
+    {"dish": "Very Delicious Cookies", "imagePath": "img/cookies.jpg", "restaurant": "Res A", "price": 2.99, "rating": "4.0"},
+    {"dish": "House Special Spaghetti", "imagePath": "img/spaghetti.jpg", "restaurant": "Res A", "price": 9.99, "rating": "4.0"},
+    {"dish": "Smeely Smokey ribs", "imagePath": "img/ribs.jpg", "restaurant": "Res B", "price": 12.99, "rating": "4.3"}
 ];
 
     return {
