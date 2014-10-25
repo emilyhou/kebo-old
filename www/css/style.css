@@ -1,10 +1,46 @@
 /* Empty. Add your own CSS if you like */
 #container {
-  width: 250px;
-  margin-top: 50px;
-  margin-left: 42px;
+  background: #ccc; 
+  border-radius: 10px;   
+  width: 238px;
+  left: auto;
   display: block;
-  height: 250px;
+  height: 265px;
+  top: auto;
+  position: absolute;
+  list-style-type: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#outercontainer1 {
+  background: #bbb; 
+  border-radius: 10px;   
+  width: 238px;
+  left: auto;
+  display: block;
+  height: 270px;
+  top: auto;
+  position: absolute;
+  list-style-type: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#outercontainer2 {
+  background: #aaa; 
+  border-radius: 10px;   
+  width: 238px;
+  left: 42px;
+  display: block;
+  height: 275px;
+  top: 30px;
   position: absolute;
   list-style-type: none;
   -webkit-touch-callout: none;
@@ -21,8 +57,10 @@
   color: #fff;
   padding: 10px;
   width: 238px;
-  height: 238px;
-  top: 18px;
+  height: 260px;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
 
   position: absolute;
   cursor: hand;
@@ -75,4 +113,13 @@
   top: 50px;
   left: 40px;
   text-shadow: none;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.name-of-food {
+  font-size: 20px;
+  color: rgb(0,0,0);
+  text-align: center;
 }
