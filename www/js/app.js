@@ -62,4 +62,3 @@ angular.module('demo', ['ionic', 'demo.controllers', 'demo.services', 'ngAnimate
   $urlRouterProvider.otherwise('/');
 
 });
-

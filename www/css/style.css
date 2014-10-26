@@ -37,7 +37,7 @@
   background: #aaa; 
   border-radius: 10px;   
   width: 238px;
-  left: 42px;
+  left: 60px;
   display: block;
   height: 275px;
   top: 30px;
@@ -124,13 +124,19 @@ img {
   text-align: center;
 }
 
-span.stars, span.stars span {
-    display: block;
-    background: url(stars.png) 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
+button {
+    height: 30px;
+    width: 30px;
+    border-color: #BCD2EE;
+    background-color: white;
+    border-width: 2px;
+    border-radius: 15px;
+    margin: auto;
+    text-align: center;
+    font-size: 20pt;
 }
 
+<<<<<<< HEAD
 span.stars span {
     background-position: 0 0;
 }
@@ -152,6 +158,8 @@ button {
     font-size: 20pt;
 }
 
+=======
+>>>>>>> 8e507afa1c575a940ab2e1e857786c3d8d18a02b
 .btn {
   position: relative;
   display: inline-block;
@@ -252,6 +260,7 @@ button {
 
   position: absolute;
   cursor: hand;
+<<<<<<< HEAD
 }
 
 .alt {
@@ -260,4 +269,6 @@ button {
       margin-bottom: 20px;
 
   position: absolute;
+=======
+>>>>>>> 8e507afa1c575a940ab2e1e857786c3d8d18a02b
 }

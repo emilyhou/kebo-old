@@ -1,40 +1,116 @@
 angular.module('demo.controllers', [])
 
+//var fav_queue = [];
 
-.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue) {
+
+.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue, Fav, First, End) {
+    $scope.myTitle = '<img src="img/word.png">';
     $scope.dishes = Queue.all();
-    $scope.dish = $scope.dishes[0];
+    $scope.dish = $scope.dishes[2];
+    $scope.favorites = Fav.all();
+    $scope.firsts = First.all();
+    $scope.firstLeft = $scope.firsts[0];
+    $scope.firstRight = $scope.firsts[1];
+    $scope.end = End.all();
+    /*
+function trash() {
+    console.log("someone dun gooft");
+}
+
+function yum() {
+    console.log("you liked a dish!!!");
+}
+
+function info(){
+    console.log("happy birthday");
+}*/
     
-    $scope.onSwipeRight = function(){
-        var index = $scope.dishes.indexOf(this.dish);
-        var nextItem;
-        if(index >= 0 && index < this.dishes.length - 1){
-            nextItem = this.dishes[index + 1]
-        } else {
-            nextItem = this.dishes[0];
+    
+    $scope.onSwipeRight = function(index, element){
+        if (this.firstRight) {
+            $ionicPopup.show({
+            template: 'Swipe right to LIKE and add to your favorites',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+            this.firstRight = false;
         }
-        this.dish = nextItem;
+        var index = $scope.dishes.indexOf(this.dish);
+        angular.element(document.getElementById(element)).addClass('right-swipe');
+        var nextItem;
+        this.dishes.splice(index, 1);
+        if (this.dishes.length === 0) {
+            $ionicPopup.show({
+            template: 'No more pics to see. Stay Tuned.',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+            this.dish = this.end;
+        }
+        else {
+            if(index > 0 && index <= this.dishes.length - 1){
+                nextItem = this.dishes[index - 1]
+            } else {
+                nextItem = this.dishes[this.dishes.length-1];
+            }
+            this.favorites.push(this.dish);
+            this.dish = nextItem;
+        }
     }
     
-    $scope.onSwipeLeft = function(){
-        var index = $scope.dishes.indexOf(this.dish);
-        var nextItem;
-        if(index > 0 && index <= this.dishes.length - 1){
-            nextItem = this.dishes[index - 1]
-        } else {
-            nextItem = this.dishes[this.dishes.length-1];
+    $scope.onSwipeLeft = function(index, element){
+        if (this.firstLeft) {
+            var myPopup = $ionicPopup.show({
+            template: 'Swipe left to ignore',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+            this.firstLeft = false;
         }
-        this.dish = nextItem;
+        var index = $scope.dishes.indexOf(this.dish);
+        angular.element(document.getElementById(element)).addClass('left-swipe');
+        var nextItem;
+        this.dishes.splice(index, 1);
+        if (this.dishes.length === 0) {
+            var myPopup = $ionicPopup.show({
+            template: 'No more pics to see. Stay Tuned.',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+            this.dish = this.end;
+        }
+        else {
+            if(index > 0 && index <= this.dishes.length - 1){
+                nextItem = this.dishes[index - 1]
+            } else {
+                nextItem = this.dishes[this.dishes.length-1];
+            }
+            this.dish = nextItem;
+        }
     }
     
-    $scope.onTap = function() {
+    $scope.onTap = function(index) {
         var index = $scope.dishes.indexOf(this.dish);
         //alert(this.dishes[index].dish);
 
             // An elaborate, custom popup
             var myPopup = $ionicPopup.show({
-            template: 'Price: $' + this.dishes[index].price + '<br>Rating: ' + this.dishes[index].rating + "/5",
-            title: this.dishes[index].dish,
+            //template: '$' + this.dishes[index].price + '<br>' + this.dishes[index].rating + "/5",
+            title:  '<br>' + this.dishes[index].dish + '<br>' + '$' + this.dishes[index].price + '<br><br>' + this.dishes[index].restaurant
+                    + '<br><br>' + this.dishes[index].distance + ' miles away' + '<br>',
+            //subTitle: '$' + this.dishes[index].price + '<br>' + this.dishes[index].rating + "/5",
             scope: $scope,
             buttons: [
                 { text: 'OK' }
