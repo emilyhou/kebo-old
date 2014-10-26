@@ -1,3 +1,4 @@
+
 <ion-view title="Kebo">
   <ion-content class="padding">
       
@@ -13,6 +14,14 @@
     </div>
     
   </ion-content>
+ <div class = "house">
+             <button id="yumbutton" class="btn btn-positive pull-right"
+ng-click="onSwipeRight()"><span class="icon icon-check"></span></button>
+            <button id="infobutton" class="btn btn-info"
+ng-click="onTap()">i</button>
+            <button id="trashbutton"class="btn btn-negative pull-left"
+ng-click="onSwipeLeft()"><span class="icon icon-close"></span></button>
+</div>
 <ion-footer-bar class="bar-assertive" on-swipe-up="swipeQueue()" on-tap="swipeQueue()">
   <h1 class="title">Queue</h1>
 </ion-footer-bar>

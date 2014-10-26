@@ -6,6 +6,18 @@ angular.module('demo.controllers', [])
     $scope.dishes = Queue.all();
     $scope.dish = $scope.dishes[0];
     $scope.favorites = Fav.all();
+    /*
+function trash() {
+    console.log("someone dun gooft");
+}
+
+function yum() {
+    console.log("you liked a dish!!!");
+}
+
+function info(){
+    console.log("happy birthday");
+}*/
     
     $scope.onSwipeRight = function(){
         var index = this.dishes.indexOf(this.dish);
