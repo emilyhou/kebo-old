@@ -107,8 +107,10 @@ function info(){
 
             // An elaborate, custom popup
             var myPopup = $ionicPopup.show({
-            template: 'Price: $' + this.dishes[index].price + '<br>Rating: ' + this.dishes[index].rating + "/5",
-            title: this.dishes[index].dish,
+            //template: '$' + this.dishes[index].price + '<br>' + this.dishes[index].rating + "/5",
+            title:  '<br>' + this.dishes[index].dish + '<br>' + '$' + this.dishes[index].price + '<br><br>' + this.dishes[index].restaurant
+                    + '<br><br>' + this.dishes[index].distance + ' miles away' + '<br>',
+            //subTitle: '$' + this.dishes[index].price + '<br>' + this.dishes[index].rating + "/5",
             scope: $scope,
             buttons: [
                 { text: 'OK' }
