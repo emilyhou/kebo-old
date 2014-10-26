@@ -4,7 +4,7 @@ angular.module('demo.controllers', [])
 
 .controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue, Fav) {
     $scope.dishes = Queue.all();
-    $scope.dish = $scope.dishes[0];
+    $scope.dish = $scope.dishes[2];
     $scope.favorites = Fav.all();
     /*
 function trash() {
@@ -19,8 +19,10 @@ function info(){
     console.log("happy birthday");
 }*/
     
-    $scope.onSwipeRight = function(){
-        var index = this.dishes.indexOf(this.dish);
+    
+    $scope.onSwipeRight = function(index, element){
+        var index = $scope.dishes.indexOf(this.dish);
+        angular.element(document.getElementById(element)).addClass('right-swipe');
         var nextItem;
         this.dishes.splice(index, 1);
         if (this.dishes.length === 0) {
@@ -33,19 +35,18 @@ function info(){
             ]
             });
         }
-        index--;
-        if(index >= 0 && index < this.dishes.length - 1){
-            nextItem = this.dishes[index + 1]
+        if(index > 0 && index <= this.dishes.length - 1){
+            nextItem = this.dishes[index - 1]
         } else {
-            nextItem = this.dishes[0];
+            nextItem = this.dishes[this.dishes.length-1];
         }
         this.favorites.push(this.dish);
-        //$scope.fav_queue.push(this.dish);
         this.dish = nextItem;
     }
     
-    $scope.onSwipeLeft = function(){
+    $scope.onSwipeLeft = function(index, element){
         var index = $scope.dishes.indexOf(this.dish);
+        angular.element(document.getElementById(element)).addClass('left-swipe');
         var nextItem;
         this.dishes.splice(index, 1);
         if (this.dishes.length === 0) {
@@ -66,7 +67,7 @@ function info(){
         this.dish = nextItem;
     }
     
-    $scope.onTap = function() {
+    $scope.onTap = function(index) {
         var index = $scope.dishes.indexOf(this.dish);
         //alert(this.dishes[index].dish);
 

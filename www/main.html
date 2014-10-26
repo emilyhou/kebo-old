@@ -5,14 +5,21 @@
     <div id="outercontainer2">
         <div id="outercontainer1">
             <div id="container">
-                <div class="buddy" style="display:block;">
-                    <img on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()" on-tap="onTap()" src="{{dish.imagePath}}" width=auto height=auto></img>
-                    <p class=name-of-food>{{dish.dish}}</p>
+                <div id='div1' style="display:block;" on-swipe-right="onSwipeRight($index, 'div1')" on-swipe-left="onSwipeLeft($index, 'div1')" class=" buddy class-animation" on-tap="onTap($index)">
+                    <img src="img/cookies.jpg" width=auto height=auto></img>
+                    <p class=name-of-food>Very Delicious Cookies</p>
+                </div>
+                <div id='div2' style="display:block;" on-swipe-right="onSwipeRight($index, 'div2')" on-swipe-left="onSwipeLeft($index, 'div2')" class=" buddy class-animation" on-tap="onTap($index)">
+                    <img src="img/spaghetti.jpg" width=auto height=auto></img>
+                    <p class=name-of-food>House Special Spaghetti</p>
+                </div>
+                <div id='div3' style="display:block;" on-swipe-right="onSwipeRight($index, 'div3')" on-swipe-left="onSwipeLeft($index, 'div3')" class=" buddy class-animation" on-tap="onTap($index)">
+                    <img src="img/ribs.jpg" width=auto height=auto></img>
+                    <p class=name-of-food>Smeely Smokey ribs</p>
                 </div>
             </div>
         </div>
     </div>
-    
   </ion-content>
  <div class = "house">
              <button id="yumbutton" class="btn btn-positive pull-right"
