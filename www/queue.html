@@ -4,6 +4,11 @@
   </ion-header-bar>
   <ion-content>
     <div class="list">
+      <div class="item item-thumbnail-left item-icon-right" on-swipe-left="viewDetails()">
+            <img src="img/BoatYard Logo.jpg">
+            <h2>The BoatYard</h2>
+            <i class="icon ion-chevron-right" on-tap="viewDetails()"></i>
+        </div>
         <div class="item item-thumbnail-left item-icon-right" on-swipe-left="viewDetails()">
             <img src="img/cookies.jpg">
             <h2>Restaurant 1</h2>
@@ -19,11 +24,7 @@
             <h2>Restaurant 3</h2>
             <i class="icon ion-chevron-right" on-tap="viewDetails()"></i>
         </div>
-        <!-- <div class="item item-thumbnail-left item-icon-right" on-swipe-left="viewDetails()">
-            <img src="img/boatyard BBQ Baby Back Ribs - 18.95">
-            <h2>The BoatYard</h2>
-            <i class="icon ion-chevron-right" on-tap="viewDetails()"></i>
-        </div> -->
+        
     </div>
   </ion-content>
 <ion-footer-bar class="bar-assertive">
