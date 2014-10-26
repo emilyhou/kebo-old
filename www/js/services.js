@@ -12,7 +12,6 @@ angular.module('demo.services', [])
         {"dish": "House Special Spaghetti", "imagePath": "img/spaghetti.jpg", "restaurant": "Res A", "price": 9.99, "rating": "4.0"},
         {"dish": "Smeely Smokey ribs", "imagePath": "img/ribs.jpg", "restaurant": "Res B", "price": 12.99, "rating": "4.3"}
     ];
-
     return {
         all: function() {
           return dishes;
@@ -20,6 +19,22 @@ angular.module('demo.services', [])
         get: function(dishId) {
           // Simple index lookup
           return dishes[dishId];
+        }
+    }
+})
+
+.factory('Fav', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var favQueue = [];
+    return {
+        all: function() {
+          return favQueue;
+        },
+        get: function(favId) {
+          // Simple index lookup
+          return favQueue[favId];
         }
     }
 });

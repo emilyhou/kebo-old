@@ -1,24 +1,51 @@
 angular.module('demo.controllers', [])
 
+//var fav_queue = [];
 
-.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue) {
+.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue, Fav) {
     $scope.dishes = Queue.all();
     $scope.dish = $scope.dishes[0];
+    $scope.favorites = Fav.all();
     
     $scope.onSwipeRight = function(){
-        var index = $scope.dishes.indexOf(this.dish);
+        var index = this.dishes.indexOf(this.dish);
         var nextItem;
+        this.dishes.splice(index, 1);
+        if (this.dishes.length === 0) {
+            var myPopup = $ionicPopup.show({
+            template: 'No more pics to see. Stay Tuned.',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+        }
+        index--;
         if(index >= 0 && index < this.dishes.length - 1){
             nextItem = this.dishes[index + 1]
         } else {
             nextItem = this.dishes[0];
         }
+        this.favorites.push(this.dish);
+        //$scope.fav_queue.push(this.dish);
         this.dish = nextItem;
     }
     
     $scope.onSwipeLeft = function(){
         var index = $scope.dishes.indexOf(this.dish);
         var nextItem;
+        this.dishes.splice(index, 1);
+        if (this.dishes.length === 0) {
+            var myPopup = $ionicPopup.show({
+            template: 'No more pics to see. Stay Tuned.',
+            title: 'Alert',
+            scope: $scope,
+            buttons: [
+                { text: 'OK' }
+            ]
+            });
+        }
         if(index > 0 && index <= this.dishes.length - 1){
             nextItem = this.dishes[index - 1]
         } else {
