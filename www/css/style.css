@@ -37,7 +37,7 @@
   background: #aaa; 
   border-radius: 10px;   
   width: 238px;
-  left: 42px;
+  left: 60px;
   display: block;
   height: 275px;
   top: 30px;
@@ -155,17 +155,18 @@ button {
 }
 
 .btn-info{
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   position: relative;
   display: inline-block;
   padding: 2px 2px 6px 2px;
-  margin-left: 70px;
-  margin-top: 5px;
+  margin-left: 30px;
+  margin-top: 10px;
   font-size: 20px;
   font-family: cursive;
   font-style: italic;
-  font-weight: 400;
+  /*font-weight: bold;*/
+  font-weight: 600;
   line-height: 1;
   color: #333;
   text-align: center;
@@ -173,7 +174,7 @@ button {
   vertical-align: top;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 20px;
 
 }
 
@@ -183,10 +184,11 @@ button {
   font-style: normal;
   background-color: #5cb85c;
   border: 1px solid #5cb85c;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
+  font-weight: 700;
 }
 
 .btn-negative {
@@ -194,11 +196,12 @@ button {
   color: #fff;
   background-color: #c9302c;
   border: 1px solid #c9302c;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
   font-style: normal;
+  font-weight: 700;
 }
 
 .btn-positive:active, .btn-positive.active {
@@ -223,12 +226,13 @@ button {
   display: block;
   background: #ddd;
   border-radius: 10px;
-  background-color: rgba(255,0,255,0.3);
+  background-color: rgba(255,0,255,0);
   padding: 10px;
   width: 238px;
-  height: 60px;
+  height: 100px;
   bottom: 60px;
-    margin-left: 100;
+  margin-left: 65px;
+  margin-bottom: 20px;
 
   position: absolute;
   cursor: hand;

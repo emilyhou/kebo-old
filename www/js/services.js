@@ -11,6 +11,10 @@ angular.module('demo.services', [])
         {"dish": "Very Delicious Cookies", "imagePath": "img/cookies.jpg", "restaurant": "Res A", "price": 2.99, "rating": "4.0"},
         {"dish": "House Special Spaghetti", "imagePath": "img/spaghetti.jpg", "restaurant": "Res A", "price": 9.99, "rating": "4.0"},
         {"dish": "Smeely Smokey ribs", "imagePath": "img/ribs.jpg", "restaurant": "Res B", "price": 12.99, "rating": "4.3"}
+        // {"dish": "BBQ Baby Back Ribs", "imagePath": "img/boatyard BBQ Baby Back Ribs - 18.95.jpg", "restaurant": "The BoatYard Grill", "price": 18.95, "rating": "4.5"}
+        // {"dish": "Coconut Shrimp", "imagePath": "img/boatyard Coconut Shrimp - 8.95.jpg", "restaurant": "The BoatYard Grill", "price": 8.95, "rating": "4.1"}
+        // {"dish": "Gutenburger", "imagePath": "img/Boatyard Gutenburger - 12.95.jpg", "restaurant": "The BoatYard Grill", "price": 12.95, "rating": "4.4"}
+        // {"dish": "New York Strip Steak", "imagePath": "img/Boatyard New York Strip Steak - 24.95.jpg", "restaurant": "The BoatYard Grill", "price": 24.95, "rating": "4.3"}
     ];
     return {
         all: function() {
