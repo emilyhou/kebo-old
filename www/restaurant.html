@@ -1,37 +1,27 @@
-<ion-view title="Restaurant" animation="slide-left-right-ios7">
-  
-  <ion-content>
-    <div class="list card">
-        <div class="item item-avatar">
-            <img src="img/boatyard-grill.png">
-            <h2>Boatyard Grill</h2>
-            <p>Seafood, American</p>
-        </div>
-        <div class="item item-body">
-            <img class="full-image" src="img/cookies.jpg">
-            <p>
-                Address: 111 Cool Place<br>
-                Ithaca, NY 14850
-            </p>
-            <p>
-                Come here for yummy food.
-            </p>
-        </div>
-        <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-                <i class="icon ion-thumbsup"></i>
-                Like
-            </a>
-        </div>
-        <div class="item tabs tabs-secondary tabs-icon-right">
-            <a class="tab-item" href="#">
-                <i class="icon ion-share"></i>
-                Share
-            </a>
-        </div>
+<div class="list card" ng-controller="RestaurantCtrl">
+    <div class="item item-avatar">
+        <img ng-src="{{avatarpath}}">
+        <h2>{{restaurant}}</h2>
+        <p>{{cuisine}}</p>
     </div>
-  </ion-content>
-<ion-footer-bar class="bar-assertive">
-  <h1 class="title">Kebo</h1>
-</ion-footer-bar>
-</ion-view>
+    <div class="item item-body">
+        <p>
+            Address: {{address}}
+        </p>
+        <p>
+            {{description}}
+        </p>
+    </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item">
+          <i class="icon ion-heart"></i>
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-paper-airplane"></i>
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-trash-a"></i>
+        </a>
+    </div>
+</div>
+

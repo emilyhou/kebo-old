@@ -22,7 +22,7 @@ angular.module('demo', ['ionic', 'demo.controllers', 'demo.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
+    $urlRouterProvider.when('/queue', '/queue/list');
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -36,11 +36,20 @@ angular.module('demo', ['ionic', 'demo.controllers', 'demo.services'])
       templateUrl: 'main.html',
       controller: 'MainCtrl'
     })
-
     .state('queue', {
-      url: '/queue',
-      templateUrl: 'queue.html',
-      controller: 'QueueCtrl'
+        url: '/queue',
+        abstract: true,
+        templateUrl: 'queue.html',
+        controller: 'MainCtrl'
+    })
+
+    .state('queue.list', {
+      url: '/list',
+      views: {
+          'stuff' : {
+              templateUrl: 'list.html',
+          }
+      }
     })
     
     .state('restaurant', {

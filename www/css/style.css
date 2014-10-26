@@ -134,3 +134,130 @@ span.stars, span.stars span {
 span.stars span {
     background-position: 0 0;
 }
+
+/* Animation for front page */
+.well[ui-view]{
+
+}
+
+button {
+    height: 30px;
+    width: 30px;
+    border-color: #BCD2EE;
+    background-color: white;
+    border-width: 2px;
+    border-radius: 15px;
+    margin: auto;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.btn-info{
+  height: 40px;
+  width: 40px;
+  position: relative;
+  display: inline-block;
+  padding: 2px 2px 6px 2px;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: cursive;
+  font-style: italic;
+  /*font-weight: bold;*/
+  font-weight: 600;
+  line-height: 1;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+
+}
+
+.btn-positive {
+  vertical-align: middle;
+  color: #fff;
+  font-style: normal;
+  background-color: #5cb85c;
+  border: 1px solid #5cb85c;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.btn-negative {
+  vertical-align: middle;
+  color: #fff;
+  background-color: #c9302c;
+  border: 1px solid #c9302c;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.btn-positive:active, .btn-positive.active {
+  color: #fff;
+  background-color: #298529;
+  border: 1px solid #298529;
+}
+
+.btn-negative:active, .btn-negative.active {
+  color: #fff;
+  background-color: #960000;
+  border: 1px solid #960000;
+}
+
+.bar .btn.pull-right {
+  margin-left: 10px;
+}
+.bar .btn.pull-left {
+  margin-right: 10px;
+}
+.house {
+  display: block;
+  background: #ddd;
+  border-radius: 10px;
+  background-color: rgba(255,0,255,0);
+  padding: 10px;
+  width: 238px;
+  height: 100px;
+  bottom: 60px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+
+  position: absolute;
+  cursor: hand;
+}
+
+.alt {
+    display: block;
+    padding: 10px;
+      margin-bottom: 20px;
+
+  position: absolute;
+}

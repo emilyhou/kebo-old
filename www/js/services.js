@@ -22,4 +22,48 @@ angular.module('demo.services', [])
           return dishes[dishId];
         }
     }
+})
+
+.factory('Fav', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var favQueue = [];
+    return {
+        all: function() {
+          return favQueue;
+        },
+        get: function(favId) {
+          // Simple index lookup
+          return favQueue[favId];
+        }
+    }
+})
+
+.factory('End', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var endPic = {"dish": "Stay tuned", "imagePath": "img/Logo.png", "restaurant": "Consider dine in?", "price": 0, "rating": ""}
+    return {
+        all: function() {
+          return endPic;
+        }
+    }
+})
+
+.factory('First', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var firstCheck = [true, true];
+    return {
+        all: function() {
+          return firstCheck;
+        },
+        get: function(firstId) {
+          // Simple index lookup
+          return firstCheck[firstId];
+        }
+    }
 });

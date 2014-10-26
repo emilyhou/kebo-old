@@ -41,6 +41,7 @@ angular.module('demo.controllers', [])
             ]
         });
     }
+    
     $ionicModal.fromTemplateUrl("queue.html", {
         scope: $scope,
         animation: 'slide-in-up'
@@ -53,14 +54,18 @@ angular.module('demo.controllers', [])
     $scope.closeQueue = function() {
         $scope.modal.hide();
     };
-})
-
-.controller('QueueCtrl', function($scope, $state) {
     $scope.viewDetails = function() {
-        alert("Hello");
-        $state.go('restaurant');
+        $ionicPopup.show({
+            templateUrl: 'restaurant.html',
+        });
     };
 })
 
-.controller('RestaurantCtrl', function($scope) {
+.controller('QueueCtrl', function($scope, $state, Fav) {
+    $scope.favs = Fav.all();
+    $scope.restaurant = fav.restaurant;
+    $scope.cuisine = fav.cuisine;
+    $scope.avatarpath = 'img/boatyard-grill.png';
+    $scope.address = fav.address;
+    $scope.description = 'The best place for a romantic dinner';
 })
