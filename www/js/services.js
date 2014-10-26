@@ -43,6 +43,18 @@ angular.module('demo.services', [])
     }
 })
 
+.factory('End', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var endPic = {"dish": "Stay tuned", "imagePath": "img/Logo.png", "restaurant": "Consider dine in?", "price": 0, "rating": ""}
+    return {
+        all: function() {
+          return endPic;
+        }
+    }
+})
+
 .factory('First', function() {
     // Might use a resource here that returns a JSON array
 

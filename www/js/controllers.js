@@ -3,7 +3,7 @@ angular.module('demo.controllers', [])
 //var fav_queue = [];
 
 
-.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue, Fav, First) {
+.controller('MainCtrl', function($scope, $state, $ionicModal, $ionicPopup, Queue, Fav, First, End) {
     $scope.myTitle = '<img src="img/word.png">';
     $scope.dishes = Queue.all();
     $scope.dish = $scope.dishes[2];
@@ -11,6 +11,7 @@ angular.module('demo.controllers', [])
     $scope.firsts = First.all();
     $scope.firstLeft = $scope.firsts[0];
     $scope.firstRight = $scope.firsts[1];
+    $scope.end = End.all();
     /*
 function trash() {
     console.log("someone dun gooft");
@@ -50,14 +51,17 @@ function info(){
                 { text: 'OK' }
             ]
             });
+            this.dish = this.end;
         }
-        if(index > 0 && index <= this.dishes.length - 1){
-            nextItem = this.dishes[index - 1]
-        } else {
-            nextItem = this.dishes[this.dishes.length-1];
+        else {
+            if(index > 0 && index <= this.dishes.length - 1){
+                nextItem = this.dishes[index - 1]
+            } else {
+                nextItem = this.dishes[this.dishes.length-1];
+            }
+            this.favorites.push(this.dish);
+            this.dish = nextItem;
         }
-        this.favorites.push(this.dish);
-        this.dish = nextItem;
     }
     
     $scope.onSwipeLeft = function(index, element){
@@ -85,13 +89,16 @@ function info(){
                 { text: 'OK' }
             ]
             });
+            this.dish = this.end;
         }
-        if(index > 0 && index <= this.dishes.length - 1){
-            nextItem = this.dishes[index - 1]
-        } else {
-            nextItem = this.dishes[this.dishes.length-1];
+        else {
+            if(index > 0 && index <= this.dishes.length - 1){
+                nextItem = this.dishes[index - 1]
+            } else {
+                nextItem = this.dishes[this.dishes.length-1];
+            }
+            this.dish = nextItem;
         }
-        this.dish = nextItem;
     }
     
     $scope.onTap = function(index) {
