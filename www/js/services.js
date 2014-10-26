@@ -41,4 +41,21 @@ angular.module('demo.services', [])
           return favQueue[favId];
         }
     }
+})
+
+.factory('First', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var firstCheck = [true, true];
+    return {
+        all: function() {
+          return firstCheck;
+        },
+        get: function(firstId) {
+          // Simple index lookup
+          return firstCheck[firstId];
+        }
+    }
 });
+
